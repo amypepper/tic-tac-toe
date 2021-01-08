@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  font-family: "Quattrocento Sans", sans-serif;
+  color: white;
+  background-color: #2d8659;
+}
+
+.game-title {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  font-family: "Gravitas One", cursive;
+  font-size: 3rem;
+  padding: 5px;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: solid red 2px;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 5px;
+  margin: 5px;
+  line-height: 1.5;
+  height: auto;
+}
+
+.gameboard {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  z-index: 1;
+  position: relative;
+  width: 280px;
+  border: solid royalblue 2px;
+}
+.player-select-form {
+  width: 100%;
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-select {
+  padding: 5px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+select.player-select {
+  width: 70px;
+  padding-left: 20px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: #330066;
+  margin: 5px;
+  height: 60px;
+  background-color: white;
+}
+
+label.player-select {
+  line-height: 50px;
+  text-align: end;
+}
+
+.two-line.player-select {
+  line-height: 1.2;
+}
+canvas#canvas {
+  height: 280px;
+  width: 280px;
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  border: solid purple 2px;
+  border-radius: 10px;
+}
+
+.selector {
+  height: 64px;
+  width: 64px;
+  z-index: 3;
+  position: absolute;
+  top: 35px;
+  left: 33px;
+  font-size: 1.25rem;
+  text-align: center;
+  border: dashed 3px white;
+}
+
+/* using absolutely positioned divs to enable keyboard navigation */
+/* input.quad.one {
+  top: 35px;
+  left: 32px;
+}
+input.quad.two {
+  top: 35px;
+  left: 107px;
+}
+input.quad.three {
+  top: 35px;
+  left: 182px;
+}
+input.quad.four {
+  top: 109px;
+  left: 32px;
+}
+input.quad.five {
+  top: 109px;
+  left: 107px;
+}
+input.quad.six {
+  top: 109px;
+  left: 182px;
+}
+input.quad.seven {
+  top: 184px;
+  left: 32px;
+}
+input.quad.eight {
+  top: 184px;
+  left: 107px;
+}
+input.quad.nine {
+  top: 184px;
+  left: 182px;
+} */
+
+.new-game {
+  margin: 20px 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-height: 55px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: "Quattrocentro Sans", sans-serif;
+  border: none;
+  background-color: white;
+  color: #330066;
+}
+
+@media screen and (min-width: 619px) {
+  .player-select-form {
+    flex-direction: row;
+  }
+  select.player-select {
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="An interactive tic tac toe game" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gravitas+One&family=Quattrocento+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1 class="game-title">Tic Tac Toe</h1>
+
+    <div class="flex-wrapper">
+      <section class="instrux">
+        <p>
+          One player chooses an X as their symbol and the other player will have
+          Os as theirs. Use either the mouse or the left and right arrow keys to
+          move around the board. Click or press Enter to add your symbol in that
+          square.
+        </p>
+      </section>
+      <form class="player-select-form">
+        <label class="player-select two-line" for="player1-select"
+          >Player 1 (choose Xs or Os):</label
+        >
+        <select class="player-select" name="player1" id="player1-select">
+          <option value="x" selected>x</option>
+          <option value="o">o</option>
+        </select>
+
+        <label class="player-select" for="player2-select">Player 2:</label>
+        <select class="player-select" name="player2" id="player2-select">
+          <option value="x">x</option>
+          <option value="o" selected>o</option>
+        </select>
+      </form>
+      <span class="message" id="message"></span>
+      <div class="gameboard" id="gameboard">
+        <canvas id="canvas" height="280" width="280">
+          <p>
+            This is a tic tac toe game. You must have JavaScript installed in
+            your browser to play it. The grid is 3 squares by 3 squares.
+            Navigate the squares by pressing the left and right arrow keys and
+            then press the 'x' key to play an x in the highlighted square or
+            press the "o" key to play an o.
+          </p>
+        </canvas>
+
+        <!-- <input class="quad one" name="quad-1" id="quad-1" type="radio" />
+
+        <input class="quad two" name="quad-2" id="quad-2" type="radio" />
+
+        <input class="quad three" name="quad-3" id="quad-3" type="radio" />
+
+        <input class="quad four" name="quad-4" id="quad-4" type="radio" />
+
+        <input class="quad five" name="quad-5" id="quad-5" type="radio" />
+
+        <input class="quad six" name="quad-6" id="quad-6" type="radio" />
+
+        <input class="quad seven" name="quad-7" id="quad-7" type="radio" />
+
+        <input class="quad eight" name="quad-8" id="quad-8" type="radio" />
+
+        <input class="quad nine" name="quad-9" id="quad-9" type="radio" /> -->
+      </div>
+      <button class="new-game">New Game</button>
+    </div>
+    <script src="tictactoe.js"></script>
+  </body>
+</html>
