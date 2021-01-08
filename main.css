@@ -24,9 +24,13 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: solid red 2px;
+  /* border: solid red 2px; */
 }
-
+.instrux {
+  padding: 2px 5px;
+  line-height: 1.5;
+  font-size: 1.25rem;
+}
 .message {
   text-align: center;
   font-size: 1.25rem;
@@ -102,44 +106,6 @@ canvas#canvas {
   text-align: center;
   border: dashed 3px white;
 }
-
-/* using absolutely positioned divs to enable keyboard navigation */
-/* input.quad.one {
-  top: 35px;
-  left: 32px;
-}
-input.quad.two {
-  top: 35px;
-  left: 107px;
-}
-input.quad.three {
-  top: 35px;
-  left: 182px;
-}
-input.quad.four {
-  top: 109px;
-  left: 32px;
-}
-input.quad.five {
-  top: 109px;
-  left: 107px;
-}
-input.quad.six {
-  top: 109px;
-  left: 182px;
-}
-input.quad.seven {
-  top: 184px;
-  left: 32px;
-}
-input.quad.eight {
-  top: 184px;
-  left: 107px;
-}
-input.quad.nine {
-  top: 184px;
-  left: 182px;
-} */
 
 .new-game {
   margin: 20px 10px;
