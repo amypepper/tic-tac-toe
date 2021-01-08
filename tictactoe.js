@@ -73,6 +73,11 @@ function getMousePosition(canvas, event) {
   };
 }
 
+function disablePlayerSelection() {
+  playerOneElem.setAttribute("disabled", "");
+  playerTwoElem.setAttribute("disabled", "");
+}
+
 function findQuadrant(position) {
   const rowOne = position.y >= 35 && position.y <= 109;
   const rowTwo = position.y >= 110 && position.y <= 184;
@@ -250,8 +255,7 @@ function determineEndOfGame() {
 canvasElem.addEventListener("mousedown", (e) => playTurn(e));
 
 canvasElem.addEventListener("click", (e) => {
-  playerOneElem.setAttribute("disabled", "");
-  playerTwoElem.setAttribute("disabled", "");
+  disablePlayerSelection();
 });
 
 buttonElem.addEventListener("click", (e) => document.location.reload());
@@ -266,6 +270,7 @@ playerTwoElem.addEventListener("change", (e) => {
 
 window.addEventListener("keydown", (e) => {
   if (e.code === "KeyS" && !keySequence.length) {
+    disablePlayerSelection();
     createSelector();
     selectorElem = document.getElementById("selector");
     selectorPosition = {
