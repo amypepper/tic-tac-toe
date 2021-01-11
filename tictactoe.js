@@ -32,7 +32,6 @@ context.moveTo(180, 35);
 context.lineTo(180, 245);
 context.stroke();
 
-// horizontal lines
 context.moveTo(35, 105);
 context.lineTo(245, 105);
 context.stroke();
@@ -219,6 +218,11 @@ function createSelector() {
   att1.value = "selector";
   const att2 = document.createAttribute("id");
   att2.value = "selector";
+  const att3 = document.createAttribute("aria-label");
+  att3.value = "selector";
+  const att4 = document.createAttribute("aria-detail");
+  att4.value =
+    "This box allows you to highlight the square in which you want to place your x or o symbol.";
   div.setAttributeNode(att1);
   div.setAttributeNode(att2);
   gameboardElem.appendChild(div);
