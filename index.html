@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Tic Tac Toe</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="An interactive tic tac toe game" />
+    <meta
+      name="description"
+      content="An interactive tic tac toe game complete with keyboard navigation"
+    />
     <link rel="stylesheet" href="main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -21,39 +24,64 @@
 
     <div class="flex-wrapper">
       <section class="instrux">
+        <h2 class="how-to-play">How to Play</h2>
         <p>
           One player chooses an X as their symbol and the other player will have
-          Os as theirs.
+          Os as theirs. Click in the square where you want to add your symbol
+          and it will appear.
         </p>
         <p>
-          Use either the mouse or the arrow keys to move around the board. Click
-          (or press Enter) to add your symbol in that square.
+          For keyboard navigation, press the "s" key to enable it. Then use the
+          arrow keys to highlight the square you want, then press the
+          Enter/Return key to add your symbol in that square.
         </p>
       </section>
-      <form class="player-select-form">
+      <form
+        aria-label="form for choosing x's or o's"
+        class="player-select-form"
+      >
         <label class="player-select two-line" for="player1-select"
           >Player 1 (choose Xs or Os):</label
         >
-        <select class="player-select" name="player1" id="player1-select">
+        <select
+          aria-label="player 1 symbol selector"
+          class="player-select"
+          name="player1"
+          id="player1-select"
+        >
           <option value="x" selected>x</option>
           <option value="o">o</option>
         </select>
 
         <label class="player-select" for="player2-select">Player 2:</label>
-        <select class="player-select" name="player2" id="player2-select">
+        <select
+          aria-label="player 2 symbol selector"
+          class="player-select"
+          name="player2"
+          id="player2-select"
+        >
           <option value="x">x</option>
           <option value="o" selected>o</option>
         </select>
       </form>
-      <span class="message" id="message"></span>
+      <span
+        aria-label="player error message section"
+        class="message"
+        id="message"
+      ></span>
       <div class="gameboard" id="gameboard">
-        <canvas id="canvas" height="280" width="280">
+        <canvas
+          aria-label="tic tac toe board"
+          id="canvas"
+          height="280"
+          width="280"
+        >
           <p>
             This is a tic tac toe game. You must have JavaScript installed in
             your browser to play it. The grid is 3 squares by 3 squares.
-            Navigate the squares by pressing the left and right arrow keys and
-            then press the 'x' key to play an x in the highlighted square or
-            press the "o" key to play an o.
+            Navigate the squares by pressing the left and right arrow keys to
+            highlight a square and then press the Enter or Return key to play
+            your symbol in the highlighted square.
           </p>
         </canvas>
       </div>
