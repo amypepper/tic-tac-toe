@@ -8,8 +8,18 @@ const messageElem = document.getElementById("message");
 const gameboardElem = document.getElementById("gameboard");
 
 let currentPlayer = playerOneElem.value;
+let turnCounter = 0;
 let occupiedQuadrants = [];
 let keySequence = [];
+let turns = [
+  {
+    x: [],
+  },
+  {
+    o: [],
+  },
+];
+
 let selectorElem;
 let selectorPosition;
 
@@ -186,7 +196,7 @@ function addSymbol(quadrant) {
     occupiedQuadrants.push(quadrant);
   }
 
-  determineEndOfGame();
+  determineWinner(currentPlayer, quadrant);
   return currentPlayer === playerOneElem.value
     ? (currentPlayer = playerTwoElem.value)
     : (currentPlayer = playerOneElem.value);
@@ -249,14 +259,62 @@ function moveSelectorUp(position) {
   selectorElem.style.top = `${position.y}px`;
 }
 
-function determineEndOfGame() {
-  if (occupiedQuadrants.length >= 9) {
-    messageElem.innerHTML = 'Game Over! Click "New Game" button to play again.';
-    canvasElem.removeEventListener("mousedown", playTurn);
+function determineWinner(player, currentQuadrant) {
+  let xTurns = turns[0]["x"];
+  let oTurns = turns[1]["o"];
+  const winConditions = {
+    1: [1, 2, 3],
+    2: [4, 5, 6],
+    3: [7, 8, 9],
+    4: [1, 4, 7],
+    5: [2, 5, 8],
+    6: [3, 6, 9],
+    7: [1, 5, 9],
+    8: [3, 5, 7],
+  };
+
+  if (player === "x") {
+    xTurns.push(currentQuadrant);
+
+    for (let key = 1; key <= 8; key++) {
+      const testResults = test(winConditions[key], xTurns);
+
+      if (testResults === 3) {
+        canvasElem.removeEventListener("mousedown", handleMousedown);
+        return (messageElem.innerHTML = "X wins!");
+      } else {
+        testResults;
+      }
+    }
+  }
+
+  if (player === "o") {
+    oTurns.push(currentQuadrant);
+
+    for (let key = 1; key <= 8; key++) {
+      const testResults = test(winConditions[key], oTurns);
+
+      if (testResults === 3) {
+        canvasElem.removeEventListener("mousedown", handleMousedown);
+        return (messageElem.innerHTML = "O wins!");
+      } else {
+        testResults;
+      }
+    }
   }
 }
 
-canvasElem.addEventListener("mousedown", (e) => playTurn(e));
+function test(winConditionArr, turnsArr) {
+  let matches = 0;
+  winConditionArr.forEach((quad) => {
+    turnsArr.includes(quad) ? ++matches : null;
+  });
+  return matches;
+}
+
+const handleMousedown = (e) => playTurn(e);
+
+canvasElem.addEventListener("mousedown", handleMousedown);
 
 canvasElem.addEventListener("click", (e) => {
   disablePlayerSelection();
