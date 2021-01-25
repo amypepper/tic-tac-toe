@@ -281,7 +281,7 @@ function determineWinner(player, currentQuadrant) {
 
       if (testResults === 3) {
         canvasElem.removeEventListener("mousedown", handleMousedown);
-        return (messageElem.innerHTML = "X wins!");
+        return (messageElem.innerHTML = "<strong>X wins!</strong>");
       } else {
         testResults;
       }
@@ -296,7 +296,7 @@ function determineWinner(player, currentQuadrant) {
 
       if (testResults === 3) {
         canvasElem.removeEventListener("mousedown", handleMousedown);
-        return (messageElem.innerHTML = "O wins!");
+        return (messageElem.innerHTML = "<strong>O wins!</strong>");
       } else {
         testResults;
       }
