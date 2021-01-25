@@ -8,25 +8,15 @@ Live App
 
 Landing page
 
-![Screenshot of landing page of the app](Images/Landing-page-screenshot.png)
+![Screenshot of landing page of the app](Images/Tic-tac-toe_1.png)
 
-Visual and text search validation
+Keyboard Navigation
 
-![Screenshot of valid search](Images/Valid-search-results-screenshot.png)
+![Screenshot showing the white dash-outlined box overlaid upon the tic tac toe board that indicates keyboard navigation is active](Images/Tic-tac-toe_keyboard-nav.png)
 
-![Screenshot of invalid search](Images/Invalid-search-results-screenshot.png)
+Win Scenario
 
-Definitions results for the searched word
-
-![Screenshot of the searched word's definitions](Images/Definitions-results-screenshot.png)
-
-Etymological results for the searched word
-
-![Screenshot of the searched word's etymology](Images/Origin-results-screenshot.png)
-
-Wikipedia article about the searched word
-
-![Screenshot of the Wikipedia search results](Images/Wiki-results-screenshot.png)
+![Screenshot showing a win scenario where X has won because three X's have been played diagonally from the top left square to the bottom right square](Images/Tic-tac-toe_win.png)
 
 ## Summary
 
